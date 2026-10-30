@@ -63,7 +63,7 @@ export function Sidebar({ role, mobileOpen = false, mobileDrawerOnly = false, on
     <>
       {mobileOpen && (
         <button
-          className="fixed inset-0 z-40 bg-slate-950/40 lg:hidden"
+          className="fixed inset-0 z-40 bg-heading/40 lg:hidden"
           onClick={onClose}
           aria-label="Close navigation"
         />
@@ -71,7 +71,7 @@ export function Sidebar({ role, mobileOpen = false, mobileDrawerOnly = false, on
       <aside
         aria-label={`${details.label} navigation`}
         className={cn(
-          "fixed inset-y-0 left-0 z-50 flex w-[min(18rem,calc(100vw-2.5rem))] flex-col border-r border-border bg-white transition-transform duration-200 lg:translate-x-0",
+          "fixed inset-y-0 left-0 z-50 flex w-[min(18rem,calc(100vw-2.5rem))] flex-col border-r border-border bg-sidebar transition-transform duration-200 lg:translate-x-0",
           mobileOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0",
           mobileDrawerOnly && "lg:hidden",
         )}
@@ -84,7 +84,7 @@ export function Sidebar({ role, mobileOpen = false, mobileDrawerOnly = false, on
             <span className="text-[15px] font-semibold text-heading">RepairConnect</span>
           </Link>
           <button
-            className="inline-flex size-9 items-center justify-center rounded-lg text-muted hover:bg-slate-100 lg:hidden"
+            className="inline-flex size-9 items-center justify-center rounded-lg text-muted hover:bg-surface-hover lg:hidden"
             onClick={onClose}
             aria-label="Close navigation"
           >
@@ -110,7 +110,7 @@ export function Sidebar({ role, mobileOpen = false, mobileDrawerOnly = false, on
                 aria-current={active ? "page" : undefined}
                 className={cn(
                   "flex min-h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium transition-colors",
-                  active ? "bg-primary-wash text-primary" : "text-body hover:bg-slate-50 hover:text-heading",
+                  active ? "bg-primary-wash text-primary" : "text-body hover:bg-surface-hover hover:text-heading",
                 )}
               >
                 <Icon className="size-[18px] shrink-0" aria-hidden="true" />
@@ -124,7 +124,7 @@ export function Sidebar({ role, mobileOpen = false, mobileDrawerOnly = false, on
           <Link
             href={details.switchHref}
             onClick={onClose}
-            className="flex min-h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium text-body transition-colors hover:bg-slate-50 hover:text-heading"
+            className="flex min-h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium text-body transition-colors hover:bg-surface-hover hover:text-heading"
           >
             <UserRound className="size-[18px] shrink-0" aria-hidden="true" />
             {details.switchLabel}
@@ -132,7 +132,7 @@ export function Sidebar({ role, mobileOpen = false, mobileDrawerOnly = false, on
           <Link
             href="/login"
             onClick={onClose}
-            className="flex min-h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium text-body transition-colors hover:bg-slate-50 hover:text-heading"
+            className="flex min-h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium text-body transition-colors hover:bg-surface-hover hover:text-heading"
           >
             <LogOut className="size-[18px] shrink-0" aria-hidden="true" />
             Log out

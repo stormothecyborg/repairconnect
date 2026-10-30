@@ -72,7 +72,7 @@ export default function EmployerDashboardPage() {
           </Card>
         ) : (
           <Card className="overflow-hidden">
-            <div className="hidden grid-cols-[minmax(14rem,2fr)_minmax(8rem,1fr)_minmax(7rem,0.8fr)_minmax(7rem,0.8fr)_minmax(6rem,0.7fr)_4.5rem] gap-4 border-b border-border bg-slate-50 px-5 py-3 text-xs font-semibold uppercase text-muted lg:grid">
+            <div className="hidden grid-cols-[minmax(14rem,2fr)_minmax(8rem,1fr)_minmax(7rem,0.8fr)_minmax(7rem,0.8fr)_minmax(6rem,0.7fr)_4.5rem] gap-4 border-b border-border bg-surface-hover px-5 py-3 text-xs font-semibold uppercase text-muted lg:grid">
               <span>Job</span><span>Location</span><span>Pay</span><span>Status</span><span>Applicants</span><span />
             </div>
             <div className="divide-y divide-border">

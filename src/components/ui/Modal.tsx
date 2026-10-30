@@ -42,13 +42,13 @@ export function Modal({ open, onClose, title, description, children, footer, siz
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto p-4" role="presentation">
-      <button className="absolute inset-0 cursor-default bg-slate-950/40" aria-label="Close dialog" onClick={onClose} />
+      <button className="absolute inset-0 cursor-default bg-heading/40" aria-label="Close dialog" onClick={onClose} />
       <section
         role="dialog"
         aria-modal="true"
         aria-labelledby="modal-title"
         aria-describedby={description ? "modal-description" : undefined}
-        className={cn("relative z-10 w-full rounded-xl border border-border bg-white shadow-xl", sizes[size])}
+        className={cn("relative z-10 w-full rounded-xl border border-border bg-surface shadow-xl", sizes[size])}
       >
         <header className="flex items-start justify-between gap-4 border-b border-border px-5 py-4">
           <div>

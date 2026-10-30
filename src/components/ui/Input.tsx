@@ -20,7 +20,7 @@ export function Input({ label, error, hint, id, className, ...props }: InputProp
         aria-invalid={Boolean(error)}
         aria-describedby={messageId}
         className={cn(
-          "h-10 w-full rounded-lg border border-border bg-white px-3 text-sm text-heading outline-none transition placeholder:text-muted focus:border-primary focus:ring-4 focus:ring-primary/10 disabled:cursor-not-allowed disabled:bg-slate-50",
+          "h-10 w-full rounded-lg border border-border bg-surface px-3 text-sm text-heading outline-none transition placeholder:text-muted focus:border-primary focus:ring-4 focus:ring-primary/10 disabled:cursor-not-allowed disabled:bg-sidebar",
           error && "border-danger focus:border-danger focus:ring-danger/10",
           className,
         )}

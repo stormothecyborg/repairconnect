@@ -20,7 +20,7 @@ export function Textarea({ label, error, hint, id, className, ...props }: Textar
         aria-invalid={Boolean(error)}
         aria-describedby={messageId}
         className={cn(
-          "min-h-28 w-full resize-y rounded-lg border border-border bg-white px-3 py-2.5 text-sm text-heading outline-none transition placeholder:text-muted focus:border-primary focus:ring-4 focus:ring-primary/10 disabled:cursor-not-allowed disabled:bg-slate-50",
+          "min-h-28 w-full resize-y rounded-lg border border-border bg-surface px-3 py-2.5 text-sm text-heading outline-none transition placeholder:text-muted focus:border-primary focus:ring-4 focus:ring-primary/10 disabled:cursor-not-allowed disabled:bg-sidebar",
           error && "border-danger focus:border-danger focus:ring-danger/10",
           className,
         )}

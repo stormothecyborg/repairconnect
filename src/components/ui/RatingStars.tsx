@@ -18,7 +18,7 @@ export function RatingStars({ rating, showValue = false, size = "sm", className 
         {Array.from({ length: 5 }, (_, index) => (
           <Star
             key={index}
-            className={cn(iconSize, index < Math.round(safeRating) ? "fill-accent text-accent" : "text-slate-300")}
+            className={cn(iconSize, index < Math.round(safeRating) ? "fill-accent text-accent" : "text-muted")}
             aria-hidden="true"
           />
         ))}

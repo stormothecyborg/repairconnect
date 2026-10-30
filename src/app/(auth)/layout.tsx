@@ -3,7 +3,7 @@ import { ArrowUpRight, BadgeCheck, Wrench } from "lucide-react";
 
 export default function AuthLayout({ children }: { children: ReactNode }) {
   return (
-    <main className="grid min-h-screen bg-white lg:grid-cols-[minmax(19rem,0.9fr)_minmax(34rem,1.1fr)]">
+    <main className="grid min-h-screen bg-background lg:grid-cols-[minmax(19rem,0.9fr)_minmax(34rem,1.1fr)]">
       <section className="relative flex min-h-64 flex-col justify-between overflow-hidden bg-primary px-6 py-7 text-white sm:px-10 sm:py-9 lg:min-h-screen lg:px-12 lg:py-11 xl:px-16">
         <div className="pointer-events-none absolute -right-20 top-1/4 size-72 rounded-full border border-white/10" />
         <div className="pointer-events-none absolute -right-7 top-[30%] size-48 rounded-full border border-white/10" />

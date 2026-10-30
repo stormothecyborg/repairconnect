@@ -5,7 +5,7 @@ import { Topbar } from "@/components/layout/Topbar";
 export function RoleLayout({ role, children }: { role: UserRole; children: ReactNode }) {
   return (
     <div className="min-h-screen bg-background">
-      <Suspense fallback={<div className="fixed inset-y-0 left-0 hidden w-72 border-r border-border bg-white lg:block" aria-hidden="true" />}>
+      <Suspense fallback={<div className="fixed inset-y-0 left-0 hidden w-72 border-r border-border bg-sidebar lg:block" aria-hidden="true" />}>
         <Sidebar role={role} />
       </Suspense>
       <div className="min-h-screen lg:pl-72">

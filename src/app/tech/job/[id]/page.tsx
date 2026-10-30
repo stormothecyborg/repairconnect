@@ -106,7 +106,7 @@ export default function TechnicianJobDetailPage() {
         description={`Send an application to ${employer?.shopName ?? "the repair shop"}.`}
         footer={<><Button variant="secondary" onClick={() => setModalOpen(false)}>Cancel</Button><Button onClick={confirmApplication}>Confirm application</Button></>}
       >
-        <div className="mb-4 rounded-lg bg-slate-50 p-3.5">
+        <div className="mb-4 rounded-lg bg-surface-hover p-3.5">
           <p className="text-sm font-semibold text-heading">{job.title}</p>
           <p className="mt-1 text-sm text-muted">{job.city} · {formatCurrency(job.payAmount)} / {job.payType.toLowerCase()}</p>
         </div>

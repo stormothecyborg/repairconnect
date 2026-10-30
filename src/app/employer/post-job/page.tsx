@@ -233,7 +233,7 @@ export default function PostJobPage() {
                     type="button"
                     aria-pressed={selected}
                     onClick={() => toggleSkill(skill)}
-                    className={`inline-flex min-h-9 items-center gap-1.5 rounded-full border px-3 text-sm font-medium transition ${selected ? "border-primary bg-primary-wash text-primary" : "border-border bg-white text-body hover:border-slate-300 hover:bg-slate-50"}`}
+                    className={`inline-flex min-h-9 items-center gap-1.5 rounded-full border px-3 text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary ${selected ? "border-primary bg-primary-wash text-primary" : "border-border bg-surface text-body hover:bg-surface-hover"}`}
                   >
                     {selected ? <Check className="size-3.5" /> : <Plus className="size-3.5" />}
                     {skill}
@@ -286,7 +286,7 @@ export default function PostJobPage() {
         </Card>
 
         <div className="flex flex-col-reverse justify-end gap-3 sm:flex-row">
-          <Link href="/employer/dashboard" className="inline-flex min-h-10 items-center justify-center rounded-lg border border-border bg-white px-4 text-sm font-medium text-body transition-colors hover:bg-slate-50">Cancel</Link>
+          <Link href="/employer/dashboard" className="inline-flex min-h-10 items-center justify-center rounded-lg border border-border bg-surface px-4 text-sm font-medium text-body transition-colors hover:bg-surface-hover">Cancel</Link>
           <Button type="submit" size="lg">Post job</Button>
         </div>
       </form>

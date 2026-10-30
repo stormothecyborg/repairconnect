@@ -23,12 +23,12 @@ export default function SignupPage() {
   }
 
   return (
-    <div className="rounded-xl border border-border bg-white p-6 shadow-sm sm:p-8">
+    <div className="rounded-xl border border-border bg-surface p-6 shadow-sm sm:p-8">
       <p className="text-sm font-semibold text-primary">Get started</p>
       <h2 className="mt-1 text-2xl font-semibold text-heading">Create your account</h2>
       <p className="mt-2 text-sm leading-6 text-muted">Join as a repair shop or a repair technician.</p>
 
-      <div className="mt-5 grid grid-cols-2 rounded-lg bg-slate-100 p-1" role="group" aria-label="Choose your account type">
+      <div className="mt-5 grid grid-cols-2 rounded-lg bg-sidebar p-1" role="group" aria-label="Choose your account type">
         {(["employer", "technician"] as const).map((option) => {
           const Icon = option === "employer" ? BriefcaseBusiness : HardHat;
           const selected = role === option;
@@ -38,7 +38,7 @@ export default function SignupPage() {
               type="button"
               aria-pressed={selected}
               onClick={() => setRole(option)}
-              className={`inline-flex min-h-10 items-center justify-center gap-2 rounded-md px-2 text-sm font-medium capitalize transition ${selected ? "bg-white text-primary shadow-sm" : "text-muted hover:text-heading"}`}
+              className={`inline-flex min-h-10 items-center justify-center gap-2 rounded-md px-2 text-sm font-medium capitalize transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary ${selected ? "bg-surface text-primary shadow-sm" : "text-muted hover:text-heading"}`}
             >
               <Icon className="size-4" aria-hidden="true" />
               {option}

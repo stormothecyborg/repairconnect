@@ -98,7 +98,7 @@ export default function EmployerJobDetailPage() {
                             <div className="mt-3 flex flex-wrap gap-1.5">{technician.skills.slice(0, 4).map((skill) => <Badge key={skill}>{skill}</Badge>)}</div>
                           </div>
                         </div>
-                        {application.coverNote && <p className="rounded-lg bg-slate-50 px-3.5 py-3 text-sm leading-6 text-body">“{application.coverNote}”</p>}
+                        {application.coverNote && <p className="rounded-lg bg-surface-hover px-3.5 py-3 text-sm leading-6 text-body">“{application.coverNote}”</p>}
                         <div className="flex flex-wrap items-center justify-between gap-2 border-t border-border pt-3">
                           <Link href={`/employer/applicant/${technician.id}?jobId=${job.id}`} className="text-sm font-semibold text-primary hover:text-primary-hover">View profile</Link>
                           <div className="flex gap-2">
