@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# RepairConnect
 
-## Getting Started
+RepairConnect is a front-end prototype that connects repair shops with technicians for mobile, iPhone, Android, laptop, and MacBook repair work.
 
-First, run the development server:
+## Run locally
+
+From this directory, install dependencies and start the development server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000). Run `npm run build` to create a production build, or `npm run lint` to check the source.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Routes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Page                       | What the user can do                                                                    |
+| -------------------------- | --------------------------------------------------------------------------------------- |
+| `/`                        | Redirect to sign in.                                                                    |
+| `/login`                   | Choose an Employer or Technician workspace and sign in with mock credentials.           |
+| `/signup`                  | Choose a role, enter the matching details, and continue to that workspace.              |
+| `/employer/dashboard`      | Review job and applicant counts, browse posted jobs, and start a new post.              |
+| `/employer/post-job`       | Enter repair details, pay, location, urgency, and required skills.                      |
+| `/employer/job/[id]`       | Review a job and its applicants; shortlist or reject applicants.                        |
+| `/employer/applicant/[id]` | Review an applicant's profile, experience, portfolio, and reviews; shortlist or accept. |
+| `/tech/dashboard`          | Search and filter open jobs by device, city, and pay.                                   |
+| `/tech/job/[id]`           | Review repair and shop details, then apply with an optional cover note.                 |
+| `/tech/profile`            | Review the technician profile, reviews, work samples, and applied jobs.                 |
 
-## Learn More
+## Design choices
 
-To learn more about Next.js, take a look at the following resources:
+I used teal with amber accents to balance trust and energy.
+The card-based layout and persistent sidebar keep repeated navigation quick, while Inter keeps dense job details readable.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## How it works 
 
-## Deploy on Vercel
+RepairConnect gives repair shops and repair technicians one place to find each other. Shops post repair work with the device, issue, location, pay, and skills needed. Technicians browse and filter those jobs, then apply with an optional note. Shops review the applicants and can shortlist, reject, or accept them.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Overall flow
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```mermaid
+flowchart TD
+	Auth[Login or sign up] --> Role{Choose a role}
+	Role --> Employer[Employer workspace]
+	Role --> Technician[Technician workspace]
+	Employer --> EmployerDash[Manage repair jobs]
+	Technician --> TechDash[Find repair jobs]
+```
+
+### Employer flow
+
+```mermaid
+flowchart TD
+	Dashboard[Dashboard] --> Post[Post a job<br/>/employer/post-job]
+	Post --> Dashboard
+	Dashboard --> Job[Open job details]
+	Job --> Applicants[View applicants]
+	Applicants --> Profile[View applicant profile]
+	Applicants --> Shortlist[Shortlist or reject]
+	Profile --> Decision[Shortlist or accept]
+```
+
+### Technician flow
+
+```mermaid
+flowchart TD
+	Browse[Browse and filter jobs] --> Details[Review job details]
+	Details --> Apply[Apply with an optional note]
+	Apply --> Profile[Profile and applied jobs]
+	Profile --> Details
+```
+
+## What's mocked vs what's real
+
+All shops, technicians, jobs, applications, reviews, and ratings are sample data. Login and signup only route between mock workspaces; there is no real account, database, or server-side saving, so in-session changes reset on refresh. A production version would need a backend, a database, and real authentication.
